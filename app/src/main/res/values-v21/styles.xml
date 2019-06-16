@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
@@ -5,10 +6,7 @@
         <item name="colorPrimaryDark">@color/primaryDark</item>
         <item name="colorSecondary">@color/secondary</item>
         <item name="android:colorBackground">@color/primary</item>
-    </style>
 
-    <style name="ShapeCut" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerFamily">cut</item>
+        <item name="android:navigationBarColor">@color/primary</item>
     </style>
-
 </resources>

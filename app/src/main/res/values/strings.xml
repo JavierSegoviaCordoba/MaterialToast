@@ -2,6 +2,7 @@
     <string name="app_name">MaterialToast</string>
     <string name="normal">Normal</string>
     <string name="success">Success</string>
+    <string name="warning">Warning</string>
     <string name="error">Error</string>
     <string name="stylized">Stylized</string>
     <string name="stylized_toasts">Stylized toasts</string>

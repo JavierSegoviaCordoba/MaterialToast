@@ -8,7 +8,7 @@ android {
     compileSdkVersion (28)
     buildToolsVersion ("29.0.0")
     defaultConfig {
-        minSdkVersion (21)
+        minSdkVersion (15)
         targetSdkVersion (28)
         versionCode  = 1
         versionName  =  "1.0"
@@ -29,8 +29,6 @@ dependencies {
     implementation("androidx.core:core-ktx:1.0.2")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("com.google.android.material:material:1.1.0-alpha07")
-    implementation("com.javiersc:materialtoast:0.0.9")
 
-    //implementation(project(":materialtoast"))
-
+    implementation(project(":materialtoast"))
 }

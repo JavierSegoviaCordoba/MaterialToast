@@ -16,7 +16,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven("https://dl.bintray.com/javiersegoviacordoba/MaterialToast")
     }
 
 }

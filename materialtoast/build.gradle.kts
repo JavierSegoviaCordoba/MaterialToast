@@ -10,7 +10,9 @@ plugins {
 
 val libGroupId = "com.javiersc"
 val libArtifact = "MaterialToast"
-val libVersion = "0.0.9"
+val libVariantName = "materialtoast"
+val libVariantVersionName = "release"
+val libVersion = "1.0.0"
 val libWebsite = "https://github.com/JavierSegoviaCordoba/MaterialToast/"
 val libDescription = "The usual Toasty, but with steroids."
 val libVSC = "https://github.com/JavierSegoviaCordoba/MaterialToast.git"
@@ -26,7 +28,7 @@ android {
     buildToolsVersion("29.0.0")
 
     defaultConfig {
-        minSdkVersion(21)
+        minSdkVersion(15)
         targetSdkVersion(28)
         versionCode = 1
         versionName = libVersion
@@ -40,6 +42,10 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+    }
+
+    lintOptions {
+        isAbortOnError = false
     }
 
 }
@@ -60,40 +66,37 @@ val sourcesJar: Jar by tasks.creating(Jar::class) {
     from(android.sourceSets.getByName("main").java.srcDirs)
 }
 
-setupBintray()
 
-fun setupBintray() {
-    val localProperties = gradleLocalProperties(rootDir)
-    val publicationName = libArtifact
+val localProperties = gradleLocalProperties(rootDir)
+val publicationName = libArtifact
 
-    bintray {
-        user = localProperties.getProperty("bintrayUser")
-        key = localProperties.getProperty("bintrayKey")
-        publish = true
-        setPublications(publicationName)
-        pkg.apply {
-            websiteUrl = libWebsite
-            repo = libArtifact
-            name = libArtifact
-            description = libDescription
-            userOrg = user
-            setLicenses(libLicense)
-            issueTrackerUrl = libIssueTracker
-            vcsUrl = libVSC
-            version.apply { name = libVersion }
-            setLabels(libLabel1, libLabel2, libLabel3, libLabel4)
-        }
+bintray {
+    user = localProperties.getProperty("bintrayUser")
+    key = localProperties.getProperty("bintrayKey")
+    publish = true
+    pkg.apply {
+        repo = libArtifact
+        name = libArtifact
+        userOrg = user
+        description = libDescription
+        websiteUrl = libWebsite
+        setLicenses(libLicense)
+        issueTrackerUrl = libIssueTracker
+        vcsUrl = libVSC
+        version.apply { name = libVersion }
+        setLabels(libLabel1, libLabel2, libLabel3, libLabel4)
     }
+    setPublications(publicationName)
+}
 
-    publishing {
-        publications {
-            create<MavenPublication>(publicationName) {
-                groupId = libGroupId
-                artifactId = project.name
-                version = libVersion
-                artifact(sourcesJar)
-                artifact("$buildDir/outputs/aar/materialtoast-release.aar")
-            }
+publishing {
+    publications {
+        create<MavenPublication>(publicationName) {
+            groupId = libGroupId
+            artifactId = project.name
+            version = libVersion
+            artifact(sourcesJar)
+            artifact("$buildDir/outputs/aar/materialtoast-release.aar")
         }
     }
 }

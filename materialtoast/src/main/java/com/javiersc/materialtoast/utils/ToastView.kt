@@ -25,27 +25,8 @@ internal fun Context.setupStatusToastView(
             text = msg
             setTextColor(color(msgColorId))
             icon = ic
-            iconTint = color(icTintId).colorStateList()
-            backgroundTintList = context.color(bgColorId).colorStateList()
-        }
-    }
-}
-
-internal fun Context.setupSnackbarToastView(
-    msg: CharSequence,
-    msgColorId: Int,
-    ic: Drawable?,
-    icTintId: Int,
-    bgColorId: Int
-): View {
-    return toastView.apply {
-        materialButton.apply {
-            text = msg
-            setTextColor(color(msgColorId))
-            icon = ic
-            iconTint = color(icTintId).colorStateList()
-            cornerRadius = 0
-            backgroundTintList = context.color(bgColorId).colorStateList()
+            iconTint = color(icTintId).colorStateList
+            backgroundTintList = context.color(bgColorId).colorStateList
         }
     }
 }

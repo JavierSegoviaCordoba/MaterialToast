@@ -3,10 +3,13 @@
 
     <color name="normal">#000000</color>
     <color name="success">#FFFFFF</color>
+    <color name="warning">#FFFFFF</color>
     <color name="error">#FFFFFF</color>
 
+    <color name="bg_normal_pre">#DFFFFFFF</color>
     <color name="bg_normal">#99FFFFFF</color>
-    <color name="bg_success">#02B406</color>
-    <color name="bg_error">#A8001B</color>
+    <color name="bg_warning">#E6FF9800</color>
+    <color name="bg_success">#E602B406</color>
+    <color name="bg_error">#E69B051C</color>
 
 </resources>
