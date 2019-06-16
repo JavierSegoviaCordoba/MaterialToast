@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="normal">#000000</color>
+    <color name="success">#FFFFFF</color>
+    <color name="error">#FFFFFF</color>
+
+    <color name="bg_normal">#99FFFFFF</color>
+    <color name="bg_success">#02B406</color>
+    <color name="bg_error">#A8001B</color>
+
+</resources>

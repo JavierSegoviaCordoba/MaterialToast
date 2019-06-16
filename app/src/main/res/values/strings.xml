@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MaterialToast</string>
+    <string name="normal">Normal</string>
+    <string name="success">Success</string>
+    <string name="error">Error</string>
+    <string name="stylized">Stylized</string>
+    <string name="stylized_toasts">Stylized toasts</string>
+    <string name="short_toasts">Short message toasts</string>
+    <string name="long_toasts">Long message toasts</string>
+</resources>

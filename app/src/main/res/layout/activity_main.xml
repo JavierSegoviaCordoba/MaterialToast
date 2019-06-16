@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:columnCount="3"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@null">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textViewShortLabel"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/short_toasts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/bg_normal"
+        android:onClick="clickNormal"
+        android:text="@string/normal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/normal"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/materialButtonSuccess"
+        app:layout_constraintEnd_toStartOf="@+id/materialButtonSuccess"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/materialButtonSuccess" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonSuccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/bg_success"
+        android:onClick="clickSuccess"
+        android:text="@string/success"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/success"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_success"
+        app:iconTint="@color/success"
+        app:layout_constraintEnd_toStartOf="@+id/materialButtonError"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/materialButtonNormal"
+        app:layout_constraintTop_toBottomOf="@+id/textViewShortLabel" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/bg_error"
+        android:onClick="clickError"
+        android:text="@string/error"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/error"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_error"
+        app:iconTint="@color/error"
+        app:layout_constraintBottom_toBottomOf="@+id/materialButtonSuccess"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/materialButtonSuccess"
+        app:layout_constraintTop_toTopOf="@+id/materialButtonSuccess" />
+
+    <TextView
+        android:id="@+id/textViewLongLabel"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/long_toasts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialButtonSuccess" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonNormalLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/bg_normal"
+        android:onClick="clickNormalTextLong"
+        android:text="@string/normal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/normal"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/materialButtonSuccessLong"
+        app:layout_constraintEnd_toStartOf="@+id/materialButtonSuccessLong"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/materialButtonSuccessLong" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonSuccessLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/bg_success"
+        android:onClick="clickSuccessTextLong"
+        android:text="@string/success"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/success"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_success"
+        app:iconTint="@color/success"
+        app:layout_constraintEnd_toStartOf="@+id/materialButtonErrorLong"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/materialButtonNormalLong"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLongLabel" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonErrorLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/bg_error"
+        android:onClick="clickErrorTextLong"
+        android:text="@string/error"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/error"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_error"
+        app:iconTint="@color/error"
+        app:layout_constraintBottom_toBottomOf="@+id/materialButtonSuccessLong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/materialButtonSuccessLong"
+        app:layout_constraintTop_toTopOf="@+id/materialButtonSuccessLong" />
+
+    <TextView
+        android:id="@+id/textViewStylizedLabel"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/stylized_toasts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialButtonSuccessLong" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonStylized1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/stylizedBackground1"
+        android:onClick="clickStylized1"
+        android:text="@string/stylized"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/stylizedText"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_stylized_1"
+        app:iconTint="@color/stylizedIcon1"
+        app:layout_constraintBottom_toBottomOf="@+id/materialButtonStylized2"
+        app:layout_constraintEnd_toStartOf="@+id/materialButtonStylized2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/materialButtonStylized2"
+        app:shapeAppearance="@style/ShapeCut" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonStylized2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/stylizedBackground2"
+        android:onClick="clickStylized2"
+        android:text="@string/stylized"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/success"
+        app:cornerRadius="6dp"
+        app:icon="@drawable/ic_stylized_2"
+        app:iconTint="@color/success"
+        app:layout_constraintEnd_toStartOf="@+id/materialButtonStylized3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/materialButtonStylized1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStylizedLabel"
+        app:shapeAppearance="@style/ShapeCut"
+        app:strokeColor="@color/stylizedStroke2"
+        app:strokeWidth="2dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonStylized3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/stylizedBackground3"
+        android:fontFamily="@font/inconsolata_bold"
+        android:onClick="clickStylized3"
+        android:text="@string/stylized"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/stylizedText3"
+        app:cornerRadius="6dp"
+        app:icon="@drawable/ic_stylized_3"
+        app:iconTint="@color/stylizedIcon3"
+        app:layout_constraintBottom_toBottomOf="@+id/materialButtonStylized2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/materialButtonStylized2"
+        app:layout_constraintTop_toTopOf="@+id/materialButtonStylized2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

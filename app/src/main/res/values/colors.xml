@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#282C34</color>
+    <color name="primaryDark">#282C34</color>
+    <color name="secondary">#5181E0</color>
+    <color name="secondaryVariant">#EA8100</color>
+
+    <color name="stylizedText">#fff</color>
+
+    <color name="stylizedBackground1">#5181E0</color>
+    <color name="stylizedIcon1">#EA8100</color>
+
+    <color name="stylizedBackground2">#313540</color>
+    <color name="stylizedIcon2">#EED36A</color>
+    <color name="stylizedStroke2">#EED36A</color>
+
+    <color name="stylizedText3">#5181E0</color>
+    <color name="stylizedBackground3">#EA8100</color>
+    <color name="stylizedIcon3">#5181E0</color>
+    <color name="stylizedStroke3">#5181E0</color>
+
+</resources>
