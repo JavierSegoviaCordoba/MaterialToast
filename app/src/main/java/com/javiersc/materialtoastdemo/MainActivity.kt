@@ -8,6 +8,7 @@ import com.javiersc.materialtoast.*
 import com.javiersc.materialtoast.toasts.Stylized
 import com.javiersc.materialtoast.utils.ToastShape
 import com.javiersc.materialtoast.utils.dp
+import com.javiersc.materialtoast.utils.sp
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         materialButtonStylized2.setOnClickListener {
             val myStylized = Stylized().apply {
                 message = textStylized
-                messageColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedText)
+                messageColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedText2)
                 icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_stylized_2)
                 iconTint = ContextCompat.getColor(this@MainActivity, R.color.stylizedIcon2)
                 backgroundColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedBackground2)
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             val myStylized = Stylized().apply {
                 message = text
                 messageColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedText3)
+                messageSize = 20f.sp
                 val font = ResourcesCompat.getFont(this@MainActivity, R.font.inconsolata_bold)
                 font?.let { typeface = it }
                 icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_stylized_3)

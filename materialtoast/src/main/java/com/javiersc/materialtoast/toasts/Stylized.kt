@@ -7,16 +7,14 @@ import android.os.Build.VERSION.SDK_INT
 import android.os.Build.VERSION_CODES.LOLLIPOP
 import android.widget.Toast
 import androidx.core.graphics.toColorInt
-import com.javiersc.materialtoast.utils.ToastShape
-import com.javiersc.materialtoast.utils.colorStateList
-import com.javiersc.materialtoast.utils.dp
-import com.javiersc.materialtoast.utils.toastView
+import com.javiersc.materialtoast.utils.*
 import kotlinx.android.synthetic.main.material_toast.view.*
 
 class Stylized {
 
     var message: String = ""
     var messageColor: Int = "#000000".toColorInt()
+    var messageSize: Float = 14f.sp
     var typeface: Typeface = Typeface.DEFAULT
 
     var icon: Drawable? = null
@@ -40,6 +38,7 @@ class Stylized {
                 materialButton.apply {
                     text = stylized.message
                     setTextColor(stylized.messageColor)
+                    textSize = stylized.messageSize
                     typeface = stylized.typeface
 
                     icon = stylized.icon

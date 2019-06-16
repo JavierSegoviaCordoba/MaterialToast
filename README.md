@@ -9,7 +9,7 @@ The usual Toasty, but with steroids :P
 - App module build.gradle file
 
 ```
-implementation 'com.javiersc:materialtoast:1.0.0'
+implementation 'com.javiersc:materialtoast:1.0.1'
 ```
 
 - Root build.gradle file (When this library is added to jCenter it will not be necessary)
@@ -28,7 +28,7 @@ allprojects {
 - App module build.gradle.kts file
 
 ```
-implementation("com.javiersc:materialtoast:1.0.0")
+implementation("com.javiersc:materialtoast:1.0.1")
 ```
 
 - Root build.gradle.kts file (When this library is added to jCenter it will not be necessary)
@@ -90,18 +90,18 @@ Create a `Stylized` and pass it as parameter of the stylized function.
 Example 2 stylized:
 
 ```
-val myStylizedToast = Stylized().apply {
+val myStylized = Stylized().apply {
     message = textStylized
-    messageColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedText)
-    icon = getDrawable(R.drawable.ic_stylized_2)
+    messageColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedText2)
+    icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_stylized_2)
+    iconTint = ContextCompat.getColor(this@MainActivity, R.color.stylizedIcon2)
     backgroundColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedBackground2)
     strokeWidth = 2.dp
     strokeColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedStroke2)
     shape = ToastShape.CUT
     radius = 8f.dp
 }
-    
-MaterialToast.stylized(context, myStylizedToast).show()
+stylized(myStylized).show()
 
 // You can use the Context extension function too
 stylized(myStylizedToast).show()
@@ -116,6 +116,7 @@ context.stylized(myStylizedToast).show()
 |:----------------|:-----------|:-------------------------|:-----------------------------|
 | message         | String     | ""                       |                              |
 | messageColor    | Int        | "#000000".toColorInt()   |                              |
+| messageSize     | Float      | 14f.sp                   |                              |
 | typeface        | Typeface   | Typeface.DEFAULT         |                              |
 | icon            | Drawable?  | null                     |                              |
 | iconTint        | Int        | "#000000".toColorInt()   |                              |
@@ -130,9 +131,9 @@ context.stylized(myStylizedToast).show()
 
 ## App
 
-Check [app module](app/src/main/java/com/javiersc/materialtoast/MainActivity.kt) to see the code or compile this project to see in action
+Check [app module](app/src/main/java/com/javiersc/materialtoastdemo/MainActivity.kt) to see the code or compile this project to see in action
 
-<br/><img src="screenshots/screenshot (8).png" height="500">
+<br/><img src="screenshots/screenshot.png" height="450">
 
 ## Bonus
 
@@ -140,10 +141,11 @@ To programmatically change the dimensional values you can use some extensions in
 
 For example, for a `Float` value equal to 4 dp
 ```
-val myRadius: Float = 4.dp 
+val myRadius: Float = 4f.dp 
+val myTextSize: Float = 4f.sp
 ```
 Similarly, for `Int` values
 
 ```
-val myNumber: Int = 4.dp 
+val myNumber: Int = 4.dp
 ```

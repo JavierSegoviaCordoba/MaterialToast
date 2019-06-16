@@ -6,6 +6,7 @@ import android.content.res.Resources
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.util.TypedValue.COMPLEX_UNIT_DIP
+import android.util.TypedValue.COMPLEX_UNIT_PX
 import androidx.core.content.ContextCompat
 
 
@@ -15,6 +16,10 @@ val Int.dp: Int
     get() = TypedValue.applyDimension(COMPLEX_UNIT_DIP, this.toFloat(), displayMetrics).toInt()
 val Float.dp: Float
     get() = TypedValue.applyDimension(COMPLEX_UNIT_DIP, this, displayMetrics)
+val Int.sp: Int
+    get() = TypedValue.applyDimension(COMPLEX_UNIT_PX, this.toFloat(), displayMetrics).toInt()
+val Float.sp: Float
+    get() = TypedValue.applyDimension(COMPLEX_UNIT_PX, this, displayMetrics)
 
 internal fun Context.color(colorId: Int) = ContextCompat.getColor(this, colorId)
 internal val Int.colorStateList: ColorStateList

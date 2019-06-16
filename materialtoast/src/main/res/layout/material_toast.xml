@@ -10,6 +10,7 @@
     android:clickable="false"
     app:elevation="0dp"
     android:focusable="false"
+    android:textSize="14sp"
     android:gravity="start|center"
     android:includeFontPadding="false"
     android:orientation="vertical"
