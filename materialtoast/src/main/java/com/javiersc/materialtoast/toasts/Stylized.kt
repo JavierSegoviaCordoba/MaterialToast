@@ -10,7 +10,7 @@ import androidx.core.graphics.toColorInt
 import com.javiersc.materialtoast.utils.*
 import kotlinx.android.synthetic.main.material_toast.view.*
 
-class Stylized {
+class Stylized(internal val body: Stylized.() -> Unit) {
 
     var message: String = ""
     var messageColor: Int = "#000000".toColorInt()
@@ -33,6 +33,7 @@ class Stylized {
     companion object {
 
         internal fun stylized(ctx: Context, stylized: Stylized): Toast {
+            stylized.body(stylized)
             val toast = Toast(ctx).apply { duration = stylized.duration }
             toast.view = ctx.toastView.apply {
                 materialButton.apply {
@@ -59,3 +60,4 @@ class Stylized {
     }
 
 }
+

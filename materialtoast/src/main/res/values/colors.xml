@@ -8,8 +8,8 @@
 
     <color name="bg_normal_pre">#DFFFFFFF</color>
     <color name="bg_normal">#99FFFFFF</color>
-    <color name="bg_warning">#E6FF9800</color>
-    <color name="bg_success">#E602B406</color>
-    <color name="bg_error">#E69B051C</color>
+    <color name="bg_warning">#E6E28D28</color>
+    <color name="bg_success">#E629A82E</color>
+    <color name="bg_error">#E6B61F30</color>
 
 </resources>

@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         materialButtonErrorLong.setOnClickListener { error(textLong).show() }
 
         materialButtonStylized1.setOnClickListener {
-            val myStylized = Stylized().apply {
+            val myStylized = Stylized {
                 message = textStylized
                 messageColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedText)
                 icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_stylized_1)
@@ -45,8 +45,9 @@ class MainActivity : AppCompatActivity() {
             }
             stylized(myStylized).show()
         }
+
         materialButtonStylized2.setOnClickListener {
-            val myStylized = Stylized().apply {
+            val myStylized = Stylized {
                 message = textStylized
                 messageColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedText2)
                 icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_stylized_2)
@@ -59,8 +60,9 @@ class MainActivity : AppCompatActivity() {
             }
             stylized(myStylized).show()
         }
+
         materialButtonStylized3.setOnClickListener {
-            val myStylized = Stylized().apply {
+            val myStylized = Stylized {
                 message = text
                 messageColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedText3)
                 messageSize = 20f.sp

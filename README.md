@@ -1,46 +1,24 @@
 # Material Toast
 
-The usual Toasty, but with steroids :P
+- The usual Toasty, but with steroids :P
+- You need to use a [Material Component Theme](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)
 
 ### Gradle
 
+This library can be found in jCenter repository
+
 ###### Groovy
 
-- App module build.gradle file
-
-```
-implementation 'com.javiersc:materialtoast:1.0.1'
-```
-
-- Root build.gradle file (When this library is added to jCenter it will not be necessary)
-
-```
-allprojects {
-    repositories {
-         ...
-         maven { url  "https://dl.bintray.com/javiersegoviacordoba/MaterialToast" } // Add this
-    }
-}
+```groovy
+implementation 'com.javiersc:materialtoast:1.0.2'
 ```
 
 ###### Kotlin DSL
 
-- App module build.gradle.kts file
-
-```
-implementation("com.javiersc:materialtoast:1.0.1")
+```kotlin
+implementation("com.javiersc:materialtoast:1.0.2")
 ```
 
-- Root build.gradle.kts file (When this library is added to jCenter it will not be necessary)
-
-```
-allprojects {
-    repositories {
-         ...
-         maven("https://dl.bintray.com/javiersegoviacordoba/MaterialToast") // Add this
-    }
-}
-```
 
 ### Status toasts
 <br/>
@@ -56,14 +34,14 @@ allprojects {
 
 ###### Usage:
 
-```
+```kotlin
 MaterialToast.normal(context, "Your text").show()
 
 // You can use the Context extension function too
 normal("Your text").show()
 
-// Or if this is not the context
-context.normal("Your text).show()
+// Or if <this> is not the context
+context.normal("Your text").show()
 ```
 
 Similarly, you can use the other states with `warning(...)`, `error(...)`, etc.
@@ -89,8 +67,8 @@ Create a `Stylized` and pass it as parameter of the stylized function.
 
 Example 2 stylized:
 
-```
-val myStylized = Stylized().apply {
+```kotlin
+val myStylized = Stylized {
     message = textStylized
     messageColor = ContextCompat.getColor(this@MainActivity, R.color.stylizedText2)
     icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_stylized_2)
@@ -101,13 +79,13 @@ val myStylized = Stylized().apply {
     shape = ToastShape.CUT
     radius = 8f.dp
 }
-stylized(myStylized).show()
+MaterialToast.stylized(myStylized).show()
 
 // You can use the Context extension function too
-stylized(myStylizedToast).show()
+stylized(myStylized).show()
 
-// Or if this is not the context
-context.stylized(myStylizedToast).show()
+// Or if <this> is not the context
+context.stylized(myStylized).show()
 ```
 
 ##### Stylized properties
@@ -133,19 +111,18 @@ context.stylized(myStylizedToast).show()
 
 Check [app module](app/src/main/java/com/javiersc/materialtoastdemo/MainActivity.kt) to see the code or compile this project to see in action
 
-<br/><img src="screenshots/screenshot.png" height="450">
+<br/><img src="screenshots/screenshot (0).png" height="450">
 
 ## Bonus
 
-To programmatically change the dimensional values you can use some extensions included in this library. These extensions convert your values to pixels in an elegant way
-
+To change the dimensional values programmatically, you can use some extensions included in this library. These extensions convert these values to pixels in an elegant way.
 For example, for a `Float` value equal to 4 dp
-```
+```kotlin
 val myRadius: Float = 4f.dp 
 val myTextSize: Float = 4f.sp
 ```
 Similarly, for `Int` values
 
-```
+```kotlin
 val myNumber: Int = 4.dp
 ```
